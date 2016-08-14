@@ -1,14 +1,47 @@
 package com.revature.ims_backend.entities;
 
-public class Client {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+public class Client implements Serializable {
+	
+	@Id
+	@Column(name="ims_address_id")
+	@GeneratedValue
 	private int id;
+	
+	@Column(name="client_name")
 	private String name;
+	
+	@Column(name="client_email")
 	private String email;
+	
+	@Column(name="point_of_contact_name")
 	private String pointOfContactName;
+	
+	@Column(name="client_phone")
 	private String phoneNumber;
+	
+	@Column(name="client_fax")
 	private String faxNumber;
+	
+	@MapsId
+	@OneToOne
+	@JoinColumn(name="address_id")
 	private Address address;
+	
+	@ManyToOne()
+	@JoinColumn(name="client_type_id")
 	private ClientType clientType;
+	
 	public int getId() {
 		return id;
 	}

@@ -1,12 +1,37 @@
 package com.revature.ims_backend.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ims_address")
 public class Address {
+	
+	@Id
+	@Column(name="ims_address_id")
 	private int id;
+	
+	@Column(name="street_address_1")
 	private String address1;
+	
+	@Column(name="street_address_2")
 	private String address2;
+	
+	@Column(name="address_city")
 	private String city;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="state_id")
 	private StateAbbreviation state;
+	
+	@Column(name="address_zip")
 	private String zip;
+	
 	public int getId() {
 		return id;
 	}
