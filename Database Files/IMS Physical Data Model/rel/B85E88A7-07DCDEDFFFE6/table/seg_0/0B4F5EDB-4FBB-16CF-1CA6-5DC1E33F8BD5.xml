@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0B4F5EDB-4FBB-16CF-1CA6-5DC1E33F8BD5" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PURCHASE_ORDER">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_PURCHASE_ORDER</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_NUMBER" id="E75AF641-E2BB-36AF-CE3F-0A2E05B53CF4">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>ORDER_NUMBER</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUBTOTAL" id="0266A234-9FFA-1455-8C8F-6C76D26DE767">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>SUBTOTAL</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PURCHASE_DATE" id="4418DE0E-15B9-B5D2-51C6-4C597536364D">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>PURCHASE_DATE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TAX_AMOUNT" id="452A2FA0-F8B2-054F-FA61-B37D4303FFE1">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>TAX_AMOUNT</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PO_TOTAL" id="E38319A6-196D-43F1-4A78-4F8CB62C1810">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>PO_TOTAL</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_ID" id="8FEAAB6A-C41F-ECE4-A101-C5740393C3F8">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PURCHASE_ORDER</sourceObjSchema>
+<sourceObjName>CLIENT_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9EA94044-96E6-CC4C-E554-4BBF72C87A36" referredColumn="F9AC75EA-4572-01EB-80E6-8B157BFDAFD6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F10594F-EFEB-1422-AC36-F1BA6B272CE7" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PURCHASE_ORDER_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>SYS_C008895</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E75AF641-E2BB-36AF-CE3F-0A2E05B53CF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C19B298-02E0-5E9A-3EA5-CB3B6170F326" name="CLIENT_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8FEAAB6A-C41F-ECE4-A101-C5740393C3F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

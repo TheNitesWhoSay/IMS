@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="IMS_PRODUCT_IMAGE" directorySegmentName="seg_0" id="CFC63FFA-F6C6-CFA6-F05F-C28D90338686">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<schemaObject>B46FE20C-0185-DEC2-CCE6-B0C10561E73A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>8C8E1B4B-382A-2976-1139-0B2ABD1FCF68</segment>
+<tableSpace>F7CC4B95-B256-4CA6-3FC8-E3BDEB49DA58</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="IMAGE_ID" id="262EC6FE-B0E5-AA57-5C86-B2AC82DF917D">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IMAGE_ADDRESS" id="3E9C4935-4E13-0F2D-747C-C2F46C8A265D">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="IMS_PRODUCT_IMAGE_PK" id="84BCA429-5B59-21F2-2161-897068F3F170">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<schemaObject>B46FE20C-0185-DEC2-CCE6-B0C10561E73A</schemaObject>
+<segment>0EAB6280-8018-E44B-121F-F156154D1837</segment>
+<tableSpace>F7CC4B95-B256-4CA6-3FC8-E3BDEB49DA58</tableSpace>
+<indexSegment>0EAB6280-8018-E44B-121F-F156154D1837</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

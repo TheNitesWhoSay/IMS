@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94300F7A-0E6D-F294-18BA-62103E9F13B4" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="PRODUCT_CATEGORIES">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>PRODUCT_CATEGORIES</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCT_UPC" id="F3694BC8-B237-558E-E99C-E56FA9161805">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>PRODUCT_CATEGORIES</sourceObjSchema>
+<sourceObjName>PRODUCT_UPC</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3DE7993C-5321-1E41-5367-993A25A4ACDC" referredColumn="4B5D1865-E6E6-B4C0-D618-A83D308535F5"/>
+</associations>
+</Column>
+<Column name="CATEGORY_ID" id="A4127754-81DD-E19D-E2B2-F0DD5E1A0A3C">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>PRODUCT_CATEGORIES</sourceObjSchema>
+<sourceObjName>CATEGORY_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58F24811-E1B9-6324-F454-5EFAB27D8A5B" referredColumn="37BAF137-394A-CF7F-8C23-E140C34878DD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84EF4AF5-9F6E-DC24-2E03-EAF56B40016C" name="PRODUCT_CATEGORIES_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>PRODUCT_CATEGORIES_PK</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3694BC8-B237-558E-E99C-E56FA9161805"/>
+<colUsage columnID="A4127754-81DD-E19D-E2B2-F0DD5E1A0A3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="503A2BCE-A10E-5E05-4392-972D7CD3CAEC" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="PRODUCT_CATEGORIES_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>PRODUCT_CATEGORIES_PK</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3694BC8-B237-558E-E99C-E56FA9161805"/>
+<colUsage columnID="A4127754-81DD-E19D-E2B2-F0DD5E1A0A3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="176BFBC9-E7AC-8819-F8C8-23AD1CDE587C" name="CATEGORY_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4127754-81DD-E19D-E2B2-F0DD5E1A0A3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D62F7B4D-90A3-B624-5A46-3D7F3F0DEB99" name="PRODUCT_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3694BC8-B237-558E-E99C-E56FA9161805"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

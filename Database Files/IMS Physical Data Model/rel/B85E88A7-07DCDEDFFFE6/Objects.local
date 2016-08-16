@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="DEMO" seqName="seg_0"/>
+   <object objectType="Table" objectID="44CDC53A-F946-0690-72F0-3F7CEE581AFF" name="IMS_ADDRESS" seqName="seg_0"/>
+   <object objectType="Table" objectID="FB20D474-5977-BEEC-A110-D020CA21FD98" name="IMS_CLIENT" seqName="seg_0"/>
+   <object objectType="Table" objectID="DDDE685E-551A-E4D7-09D8-210B24E6A7AD" name="IMS_CLIENT_TYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="ED551C46-15A0-8B30-8BEE-0ECA05081597" name="IMS_PO_LINE" seqName="seg_0"/>
+   <object objectType="Table" objectID="A562980B-800D-21FA-4F68-9E7899A19835" name="IMS_PRODUCT" seqName="seg_0"/>
+   <object objectType="Table" objectID="8296CE24-43B1-5D8F-7E19-2C70F5834EA5" name="IMS_PRODUCT_CATEGORY" seqName="seg_0"/>
+   <object objectType="Table" objectID="CFC63FFA-F6C6-CFA6-F05F-C28D90338686" name="IMS_PRODUCT_IMAGE" seqName="seg_0"/>
+   <object objectType="Table" objectID="0B4F5EDB-4FBB-16CF-1CA6-5DC1E33F8BD5" name="IMS_PURCHASE_ORDER" seqName="seg_0"/>
+   <object objectType="Table" objectID="5191E6EB-4E9B-4B79-D31F-352A78F3A843" name="IMS_STATE_ABBRV" seqName="seg_0"/>
+   <object objectType="Table" objectID="94300F7A-0E6D-F294-18BA-62103E9F13B4" name="PRODUCT_CATEGORIES" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="2E272362-4E6C-F1C7-5407-E3BFA718512F" name="ADDRESS_FK" seqName="seg_0" containerID="FB20D474-5977-BEEC-A110-D020CA21FD98" refContainerID="44CDC53A-F946-0690-72F0-3F7CEE581AFF"/>
+   <object objectType="FKIndexAssociation" objectID="58F24811-E1B9-6324-F454-5EFAB27D8A5B" name="CATEGORY_FK" seqName="seg_0" containerID="94300F7A-0E6D-F294-18BA-62103E9F13B4" refContainerID="8296CE24-43B1-5D8F-7E19-2C70F5834EA5"/>
+   <object objectType="FKIndexAssociation" objectID="9EA94044-96E6-CC4C-E554-4BBF72C87A36" name="CLIENT_FK" seqName="seg_0" containerID="0B4F5EDB-4FBB-16CF-1CA6-5DC1E33F8BD5" refContainerID="FB20D474-5977-BEEC-A110-D020CA21FD98"/>
+   <object objectType="FKIndexAssociation" objectID="DBB14848-E2C5-89FC-DF8F-82FB0BE6F080" name="CLIENT_TYPE_FK" seqName="seg_0" containerID="FB20D474-5977-BEEC-A110-D020CA21FD98" refContainerID="DDDE685E-551A-E4D7-09D8-210B24E6A7AD"/>
+   <object objectType="FKIndexAssociation" objectID="7EEEC76E-E2FA-0990-3763-8AF25E767FB2" name="IMAGE_FK" seqName="seg_0" containerID="A562980B-800D-21FA-4F68-9E7899A19835" refContainerID="CFC63FFA-F6C6-CFA6-F05F-C28D90338686"/>
+   <object objectType="FKIndexAssociation" objectID="40B8303C-EB5E-4568-1BF8-1A5017017481" name="PO_FK" seqName="seg_0" containerID="ED551C46-15A0-8B30-8BEE-0ECA05081597" refContainerID="0B4F5EDB-4FBB-16CF-1CA6-5DC1E33F8BD5"/>
+   <object objectType="FKIndexAssociation" objectID="3DE7993C-5321-1E41-5367-993A25A4ACDC" name="PRODUCT_FK" seqName="seg_0" containerID="94300F7A-0E6D-F294-18BA-62103E9F13B4" refContainerID="A562980B-800D-21FA-4F68-9E7899A19835"/>
+   <object objectType="FKIndexAssociation" objectID="A9496EA6-5D2C-3662-1D07-5A2D69ED92A3" name="PRODUCT_FKV2" seqName="seg_0" containerID="ED551C46-15A0-8B30-8BEE-0ECA05081597" refContainerID="A562980B-800D-21FA-4F68-9E7899A19835"/>
+   <object objectType="FKIndexAssociation" objectID="0F9C9F2B-CF41-2F91-F595-2856F2F61ED0" name="STATE_ABBRV_FK" seqName="seg_0" containerID="44CDC53A-F946-0690-72F0-3F7CEE581AFF" refContainerID="5191E6EB-4E9B-4B79-D31F-352A78F3A843"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>
