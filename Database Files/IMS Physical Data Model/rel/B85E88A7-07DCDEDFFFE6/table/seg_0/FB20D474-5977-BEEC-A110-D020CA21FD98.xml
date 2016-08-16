@@ -1,0 +1,178 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB20D474-5977-BEEC-A110-D020CA21FD98" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_CLIENT">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_CLIENT</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IMS_CLIENT_ID" id="F9AC75EA-4572-01EB-80E6-8B157BFDAFD6">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>IMS_CLIENT_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_NAME" id="15BE3DFD-EBBD-417F-BD9D-F2020990DD48">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>CLIENT_NAME</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_EMAIL" id="50A540EB-9670-9E62-BFD7-EB99EE0AD614">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>CLIENT_EMAIL</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 BYTE</dataTypeSize>
+<ownDataTypeParameters>250 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POINT_OF_CONTACT_NAME" id="35E60261-EBC6-6B43-FAD3-399251FF0D3D">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>POINT_OF_CONTACT_NAME</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 BYTE</dataTypeSize>
+<ownDataTypeParameters>250 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_PHONE" id="2A30640F-BEAC-40DE-7D05-901CBD9E0961">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>CLIENT_PHONE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_FAX" id="F1E9A910-9014-F209-87CE-8B3F78D85C69">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>CLIENT_FAX</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS_ID" id="76B8B425-6729-DE63-9000-CB72FBD238D6">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>ADDRESS_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2E272362-4E6C-F1C7-5407-E3BFA718512F" referredColumn="39472CEC-62C2-C17E-9A28-1D303BEE6897"/>
+</associations>
+</Column>
+<Column name="CLIENT_TYPE_ID" id="6E49AFBA-E543-BC37-D977-B8591F3D9B3F">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT</sourceObjSchema>
+<sourceObjName>CLIENT_TYPE_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBB14848-E2C5-89FC-DF8F-82FB0BE6F080" referredColumn="73EB7032-FA45-CE5B-C280-EEE74216FF69"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="983696EC-8470-85B1-00B5-9D5A77B2FE5F" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_CLIENT_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>SYS_C008870</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9AC75EA-4572-01EB-80E6-8B157BFDAFD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9177496-DA3A-D84C-8D36-6D6B086B28EC" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_CLIENT_ADDRESS_ID_UN">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>SYS_C008871</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="76B8B425-6729-DE63-9000-CB72FBD238D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="180ED125-DC28-4F54-7E42-3F13294C69DB" name="ADDRESS_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="76B8B425-6729-DE63-9000-CB72FBD238D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B305AD87-B7A3-755B-E318-06C1291A3D08" name="CLIENT_TYPE_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E49AFBA-E543-BC37-D977-B8591F3D9B3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

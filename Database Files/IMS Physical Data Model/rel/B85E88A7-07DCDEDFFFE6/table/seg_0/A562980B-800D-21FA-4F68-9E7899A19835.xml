@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A562980B-800D-21FA-4F68-9E7899A19835" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PRODUCT">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_PRODUCT</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCT_UPC" id="4B5D1865-E6E6-B4C0-D618-A83D308535F5">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_UPC</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_NAME" id="7764AA8B-1C15-9673-2A10-1AB6CD773434">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_NAME</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150 BYTE</dataTypeSize>
+<ownDataTypeParameters>150 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_DESCRIPTION" id="76A963FC-CD52-3A6F-52D8-5D16EC781DB4">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_DESCRIPTION</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 BYTE</dataTypeSize>
+<ownDataTypeParameters>250 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SHORT_NAME" id="A7461B24-8DF4-22EA-0E6E-B32592907825">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>SHORT_NAME</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNIT_COST" id="41E35A35-A087-CBF8-315D-132EB3133505">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>UNIT_COST</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PACK_SIZE" id="C39FB18F-5728-9DF6-0FD3-E01D51BAA3B7">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PACK_SIZE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REORDER_QUANTITY" id="B1D0EF98-E033-2FAE-0194-52A33B55EAF8">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>REORDER_QUANTITY</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RETAIL_PRICE" id="DCC3BA1E-3EDC-F0D5-4B45-CC19FD503406">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>RETAIL_PRICE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_WEIGHT" id="2DF4173A-8797-B170-7A97-A83FF7CC2B76">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_WEIGHT</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_IMAGE_ID" id="4ADE5160-53BA-875E-232D-4ECC682EA44E">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_IMAGE_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7EEEC76E-E2FA-0990-3763-8AF25E767FB2" referredColumn="262EC6FE-B0E5-AA57-5C86-B2AC82DF917D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E9A543E-3C4A-5D79-D606-2DCD1424FDF8" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PRODUCT_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>SYS_C008885</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B5D1865-E6E6-B4C0-D618-A83D308535F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1446EB14-530E-56B9-562B-D55026F40578" name="IMAGE_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4ADE5160-53BA-875E-232D-4ECC682EA44E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

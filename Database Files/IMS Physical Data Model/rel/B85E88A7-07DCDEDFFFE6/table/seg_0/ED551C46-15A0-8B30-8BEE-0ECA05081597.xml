@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED551C46-15A0-8B30-8BEE-0ECA05081597" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PO_LINE">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_PO_LINE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_NUMBER" id="77307748-59C5-DF8C-D05D-D44A1C8E263C">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PO_LINE</sourceObjSchema>
+<sourceObjName>ORDER_NUMBER</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40B8303C-EB5E-4568-1BF8-1A5017017481" referredColumn="E75AF641-E2BB-36AF-CE3F-0A2E05B53CF4"/>
+</associations>
+</Column>
+<Column name="LINE_NUMBER" id="3FC74E88-921D-6B54-3676-08F607B0B436">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PO_LINE</sourceObjSchema>
+<sourceObjName>LINE_NUMBER</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNIT_PRICE" id="2F37DB95-355E-071F-211A-E7544160DFDA">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PO_LINE</sourceObjSchema>
+<sourceObjName>UNIT_PRICE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUANTITY_ORDERED" id="2548AF19-A86C-1937-C9D9-E6EAB00D1132">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PO_LINE</sourceObjSchema>
+<sourceObjName>QUANTITY_ORDERED</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_UPC" id="88D68FE8-3200-66BD-6B4A-A70EBD3EBF99">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_PO_LINE</sourceObjSchema>
+<sourceObjName>PRODUCT_UPC</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9496EA6-5D2C-3662-1D07-5A2D69ED92A3" referredColumn="4B5D1865-E6E6-B4C0-D618-A83D308535F5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5FD235D-588D-A855-6943-D8DB66AF94EB" name="IMS_PO_LINE_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_PO_LINE_PK</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77307748-59C5-DF8C-D05D-D44A1C8E263C"/>
+<colUsage columnID="3FC74E88-921D-6B54-3676-08F607B0B436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53949C1D-E9F8-F934-AAFF-F1AFF7FAB072" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_PO_LINE_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_PO_LINE_PK</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77307748-59C5-DF8C-D05D-D44A1C8E263C"/>
+<colUsage columnID="3FC74E88-921D-6B54-3676-08F607B0B436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5B1B114D-37F8-D311-0186-7EFCDA44AAC8" name="PO_FK">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77307748-59C5-DF8C-D05D-D44A1C8E263C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8813574A-13F4-D8AB-22BF-4535C97AFB43" name="PRODUCT_FKV2">
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88D68FE8-3200-66BD-6B4A-A70EBD3EBF99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

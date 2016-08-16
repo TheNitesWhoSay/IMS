@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>
+   <object objectType="TSpace" objectID="F7CC4B95-B256-4CA6-3FC8-E3BDEB49DA58" name="USERS" seqName="seg_0"/>
+   <object objectType="User" objectID="1767063C-B141-D4A8-65A9-5C0A442BA8D8" name="DEMO" seqName="seg_0"/>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="0B4F5EDB-4FBB-16CF-1CA6-5DC1E33F8BD5" name="IMS_PURCHASE_ORDER" seqName="seg_0"/>
+   <object objectType="Table" objectID="44CDC53A-F946-0690-72F0-3F7CEE581AFF" name="IMS_ADDRESS" seqName="seg_0"/>
+   <object objectType="Table" objectID="5191E6EB-4E9B-4B79-D31F-352A78F3A843" name="IMS_STATE_ABBRV" seqName="seg_0"/>
+   <object objectType="Table" objectID="8296CE24-43B1-5D8F-7E19-2C70F5834EA5" name="IMS_PRODUCT_CATEGORY" seqName="seg_0"/>
+   <object objectType="Table" objectID="94300F7A-0E6D-F294-18BA-62103E9F13B4" name="PRODUCT_CATEGORIES" seqName="seg_0"/>
+   <object objectType="Table" objectID="A562980B-800D-21FA-4F68-9E7899A19835" name="IMS_PRODUCT" seqName="seg_0"/>
+   <object objectType="Table" objectID="CFC63FFA-F6C6-CFA6-F05F-C28D90338686" name="IMS_PRODUCT_IMAGE" seqName="seg_0"/>
+   <object objectType="Table" objectID="DDDE685E-551A-E4D7-09D8-210B24E6A7AD" name="IMS_CLIENT_TYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="ED551C46-15A0-8B30-8BEE-0ECA05081597" name="IMS_PO_LINE" seqName="seg_0"/>
+   <object objectType="Table" objectID="FB20D474-5977-BEEC-A110-D020CA21FD98" name="IMS_CLIENT" seqName="seg_0"/>
+   <object objectType="Segment" objectID="8C8E1B4B-382A-2976-1139-0B2ABD1FCF68" name="Storage1" seqName="seg_0"/>
+   <object objectType="Segment" objectID="0EAB6280-8018-E44B-121F-F156154D1837" name="Storage11" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>
