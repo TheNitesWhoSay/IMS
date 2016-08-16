@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class ClientType {
 	
 	@Id
-	@Column(name="ims_client_type")
+	@Column(name="client_type_id")
 	@GeneratedValue
 	private int id;
 	

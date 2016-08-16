@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Client implements Serializable {
 	
 	@Id
-	@Column(name="ims_address_id")
+	@Column(name="ims_client_id")
 	@GeneratedValue
 	private int id;
 	
