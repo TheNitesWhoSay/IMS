@@ -7,9 +7,17 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.StateAbbreviation;
 
 public class StateAbbreviationDAO {
+	
+	Session session;
+	
+	public StateAbbreviationDAO(Session session) {
+		this.session = session;
+	}
 	
 	public StateAbbreviation getStateAbbreviation(int id) {
 		return new StateAbbreviation();

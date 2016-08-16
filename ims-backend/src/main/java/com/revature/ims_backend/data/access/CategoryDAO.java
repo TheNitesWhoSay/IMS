@@ -14,11 +14,17 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.Category;
 
-@Entity
-@Table(name="IMS_PRODUCT_CATEGORY")
 public class CategoryDAO {
+	
+	Session session;
+	
+	public CategoryDAO(Session session) {
+		this.session = session;
+	}
 	
 	public Category getCategory(int id) {
 		return new Category();

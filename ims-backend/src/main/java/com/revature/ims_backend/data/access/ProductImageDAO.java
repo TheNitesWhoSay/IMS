@@ -8,11 +8,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.ProductImage;
 
 @Entity
 @Table(name="IMS_PRODUCT_IMAGE")
 public class ProductImageDAO {
+	
+	Session session;
+	
+	public ProductImageDAO(Session session) {
+		this.session = session;
+	}
 	
 	public ProductImage getProductImage(int id) {
 		return new ProductImage();
