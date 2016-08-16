@@ -15,6 +15,16 @@
     <property name="hibernate.show_sql">true</property> <!-- for debugging -->
     
     
+    <mapping class="com.revature.ims_backend.entities.Address" />
+    <mapping class="com.revature.ims_backend.entities.Category" />
+    <mapping class="com.revature.ims_backend.entities.Client" />
+    <mapping class="com.revature.ims_backend.entities.ClientType" />
+    <mapping class="com.revature.ims_backend.entities.OrderLine" />
+    <mapping class="com.revature.ims_backend.entities.Product" />
+    <mapping class="com.revature.ims_backend.entities.ProductImage" />
+    <mapping class="com.revature.ims_backend.entities.PurchaseOrder" />
+    <mapping class="com.revature.ims_backend.entities.StateAbbreviation" />
+    
     
     <!-- Object-Relational Mapping Resource -->
 <!--     <mapping class="com.revature.beans.Student"></mapping> -->
