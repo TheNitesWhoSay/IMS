@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.Criteria;
+
 @Entity
 @Table(name="IMS_PURCHASE_ORDER")
 public class PurchaseOrder {
