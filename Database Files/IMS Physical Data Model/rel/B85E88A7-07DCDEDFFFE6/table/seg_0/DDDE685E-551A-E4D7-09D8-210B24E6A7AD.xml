@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDDE685E-551A-E4D7-09D8-210B24E6A7AD" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_CLIENT_TYPE">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>IMS_CLIENT_TYPE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENT_TYPE_ID" id="73EB7032-FA45-CE5B-C280-EEE74216FF69">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT_TYPE</sourceObjSchema>
+<sourceObjName>CLIENT_TYPE_ID</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_TYPE" id="1831E1E5-172B-1CF1-5A70-32CC9BBFD35D">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>IMS_CLIENT_TYPE</sourceObjSchema>
+<sourceObjName>CLIENT_TYPE</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="25556CE8-F642-8659-1971-88A4BD195C12" schemaObject="B46FE20C-0185-DEC2-CCE6-B0C10561E73A" name="IMS_CLIENT_TYPE_PK">
+<sourceConnName>Demo</sourceConnName>
+<sourceObjSchema>DEMO</sourceObjSchema>
+<sourceObjName>SYS_C008862</sourceObjName>
+<createdBy>Justin</createdBy>
+<createdTime>2016-08-16 02:49:21 UTC</createdTime>
+<ownerDesignName>IMS Physical Data Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73EB7032-FA45-CE5B-C280-EEE74216FF69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
