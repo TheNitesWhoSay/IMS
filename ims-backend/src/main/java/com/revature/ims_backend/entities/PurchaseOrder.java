@@ -112,5 +112,9 @@ public class PurchaseOrder {
 	public void setOrderLines(Set<OrderLine> orderLines) {
 		this.orderLines = orderLines;
 	}
+
+	public PurchaseOrder() {
+		super();
+	}
 	
 }
