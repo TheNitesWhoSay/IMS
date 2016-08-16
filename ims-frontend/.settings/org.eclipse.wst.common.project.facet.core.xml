@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="ims-frontend">
-        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <dependent-module archiveName="ims-backend-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ims-backend/ims-backend">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <property name="context-root" value="ims-frontend"/>
-        <property name="java-output-path" value="/ims-frontend/target/classes"/>
-    </wb-module>
-</project-modules>
+<?xml version="1.0" encoding="UTF-8"?>
+<faceted-project>
+  <runtime name="Apache Tomcat v7.0"/>
+  <fixed facet="wst.jsdt.web"/>
+  <installed facet="java" version="1.5"/>
+  <installed facet="jst.web" version="2.3"/>
+  <installed facet="wst.jsdt.web" version="1.0"/>
+</faceted-project>
