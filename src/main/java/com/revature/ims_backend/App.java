@@ -1,6 +1,7 @@
 package com.revature.ims_backend;
 
 import com.revature.beans.Classroom;
+import com.revature.ims_backend.entities.Category;
 import com.revature.persist.DataLayer;
 
 public class App 
@@ -8,9 +9,10 @@ public class App
     public static void main( String[] args )
     {
     	DataLayer dataLayer = new DataLayer();
-    	dataLayer.insertObject(new Classroom(1, 333, "Spire"));
-    	Classroom output = dataLayer.getClassroomById(1);
-    	System.out.println(output.getId() + " " + output.getRoomNumber() + " " + output.getBuilding());
+    	Category input = new Category(1, "Packaging Supplies");// oom(1, 333, "Sprie");
+    	dataLayer.insertObject(input);
+    	Object output = dataLayer.getCategoryById(input.getId());//getClassroomById(1);
+    	System.out.println(output);
     	dataLayer.close();
     }
 }

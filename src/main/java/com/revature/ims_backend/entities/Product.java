@@ -48,7 +48,7 @@ public class Product {
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
 	private ProductImage image;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="categories")
+	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="products")
 	private Set<Category> categories; // Lazy-load (probably)
 
 	

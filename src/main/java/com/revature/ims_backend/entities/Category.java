@@ -19,7 +19,7 @@ public class Category {
 	
 	@Id
 	@Column(name="CATEGORY_ID")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="CATEGORY_DESCRIPTION")

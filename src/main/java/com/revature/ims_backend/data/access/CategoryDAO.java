@@ -3,19 +3,10 @@ package com.revature.ims_backend.data.access;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-
+import org.hibernate.Query;
 import org.hibernate.Session;
 
+import com.revature.beans.Classroom;
 import com.revature.ims_backend.entities.Category;
 
 public class CategoryDAO {
@@ -27,11 +18,15 @@ public class CategoryDAO {
 	}
 	
 	public Category getCategory(int id) {
-		return new Category();
+		Query query = session.createQuery("from Category where id = :id");
+		query.setInteger("id",  id);
+		return (Category)query.uniqueResult();
 	}
 	
-	public Set<Category> getCategories(int id) {
-		return new HashSet<Category>();
+	@SuppressWarnings("unchecked")
+	public Set<Category> getCategories() {
+		Query query = session.createQuery("from Category");
+		return new HashSet<Category>(query.list());
 	}
 	
 	public boolean addCategory(Category category) {
