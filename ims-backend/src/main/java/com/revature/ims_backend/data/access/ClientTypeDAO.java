@@ -9,9 +9,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.ClientType;
 
 public class ClientTypeDAO {
+	
+	Session session;
+	
+	public ClientTypeDAO(Session session) {
+		this.session = session;
+	}
 	
 	public ClientType getClientType(int id) {
 		return new ClientType();

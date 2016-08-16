@@ -11,11 +11,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.Address;
 
-@Entity
-@Table(name="ims_address")
 public class AddressDAO {
+	
+	Session session;
+	
+	public AddressDAO(Session session) {
+		this.session = session;
+	}
 	
 	public Address getAddress(int id) {
 		return new Address();

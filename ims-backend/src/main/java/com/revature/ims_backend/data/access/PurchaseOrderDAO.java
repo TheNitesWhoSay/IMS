@@ -11,10 +11,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.PurchaseOrder;
 
 public class PurchaseOrderDAO {
 
+	Session session;
+	
+	public PurchaseOrderDAO(Session session) {
+		this.session = session;
+	}
+	
 	public PurchaseOrder getPurchaseOrder(int id) {
 		return new PurchaseOrder();
 	}

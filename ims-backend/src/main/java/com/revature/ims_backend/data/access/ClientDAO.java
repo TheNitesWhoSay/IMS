@@ -1,21 +1,19 @@
 package com.revature.ims_backend.data.access;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import org.hibernate.Session;
 
 import com.revature.ims_backend.entities.Client;
 
 public class ClientDAO {
+	
+	Session session;
+	
+	public ClientDAO(Session session) {
+		this.session = session;
+	}
 	
 	public Client getClient(int id) {
 		return new Client();

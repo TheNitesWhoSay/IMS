@@ -10,9 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+
 import com.revature.ims_backend.entities.OrderLine;
 
 public class OrderLineDAO {
+	
+	Session session;
+	
+	public OrderLineDAO(Session session) {
+		this.session = session;
+	}
 	
 	public OrderLine getOrderLine(int id) {
 		return new OrderLine();
