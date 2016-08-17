@@ -53,7 +53,7 @@ public class ProductDaoTest {
 			insert into IMS_CLIENT VALUES (1, 'Restrurant', 'rest@gmail.com', 'John Doe',
 			  '763-323-2355', '355-232-2399', 1, 1);
 			commit;
-			
+		 *
 		 */
 		
 		Query query = session.createQuery("FROM Client WHERE id=1");
@@ -73,9 +73,17 @@ public class ProductDaoTest {
 			session.save(order);
 			session.save(line);
 			tx.commit();
+			/*
+			Category readCategory = new Category();
+			ProductImage readImage = new ProductImage();
+			Product readProduct = new Product();
+			PurchaseOrder readOrder = new PurchaseOrder();
+			OrderLine readOrderLine = new OrderLine();
+			*/
 		} catch ( Throwable t ) {
 			try {
 				tx.rollback();
+				assert(false);
 			} catch ( Throwable th ) {}
 		}
 	}
