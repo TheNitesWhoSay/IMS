@@ -30,19 +30,19 @@ public class Product {
 	private String shortName;
 	
 	@Column(name="UNIT_COST")
-	private int unitCost;
+	private double unitCost;
 	
 	@Column(name="PACK_SIZE")
-	private String packSize;
+	private int packSize;
 	
 	@Column(name="REORDER_QUANTITY")
 	private int reorderQuantity;
 	
 	@Column(name="RETAIL_PRICE")
-	private int retailPrice;
+	private double retailPrice;
 	
 	@Column(name="PRODUCT_WEIGHT")
-	private int weight;
+	private double weight;
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
@@ -52,8 +52,8 @@ public class Product {
 	private Set<Category> categories; // Lazy-load (probably)
 
 	
-	public Product(int upc, String name, String description, String shortName, int unitCost, String packSize,
-			int reorderQuantity, int retailPrice, int weight, ProductImage image, Set<Category> categories) {
+	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
+			int reorderQuantity, double retailPrice, double weight, ProductImage image, Set<Category> categories) {
 		super();
 		this.upc = upc;
 		this.name = name;
@@ -68,8 +68,8 @@ public class Product {
 		this.categories = categories;
 	}
 
-	public Product(int upc, String name, String description, String shortName, int unitCost, String packSize,
-			int reorderQuantity, int retailPrice, int weight, ProductImage image) {
+	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
+			int reorderQuantity, double retailPrice, double weight, ProductImage image) {
 		super();
 		this.upc = upc;
 		this.name = name;
@@ -119,19 +119,19 @@ public class Product {
 		this.shortName = shortName;
 	}
 
-	public int getUnitCost() {
+	public double getUnitCost() {
 		return unitCost;
 	}
 
-	public void setUnitCost(int unitCost) {
+	public void setUnitCost(double unitCost) {
 		this.unitCost = unitCost;
 	}
 
-	public String getPackSize() {
+	public int getPackSize() {
 		return packSize;
 	}
 
-	public void setPackSize(String packSize) {
+	public void setPackSize(int packSize) {
 		this.packSize = packSize;
 	}
 
@@ -143,7 +143,7 @@ public class Product {
 		this.reorderQuantity = reorderQuantity;
 	}
 
-	public int getRetailPrice() {
+	public double getRetailPrice() {
 		return retailPrice;
 	}
 
@@ -151,11 +151,11 @@ public class Product {
 		this.retailPrice = retailPrice;
 	}
 
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 

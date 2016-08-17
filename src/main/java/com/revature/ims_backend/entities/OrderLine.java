@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,9 +26,11 @@ public class OrderLine {
 	private int quantityOrdered;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="PRODUCT_UPC")
 	private Product product;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ORDER_NUMBER", insertable=false, updatable=false)
 	private PurchaseOrder order; // Lazy-load
 	
 	
