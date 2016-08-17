@@ -70,6 +70,7 @@ public class ProductDaoTest {
 		Product product = new Product(1, "Food", "Some food", "fd", 2.00, 10, 45, 3.45, 30.5, image,
 				productCategories);
 		List<Product> foods = new ArrayList<Product>();
+		foods.add(product);
 		category.setProducts(foods);
 		PurchaseOrder order = new PurchaseOrder(1, 77.77, Calendar.getInstance().getTime(), .05, 88.88, client);
 		OrderLine line = new OrderLine(1, 1, 20.00, 5, product);

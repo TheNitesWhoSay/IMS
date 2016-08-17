@@ -28,8 +28,8 @@ public class Category {
 	
 	@ManyToMany//(fetch=FetchType.EAGER)
 	@JoinTable(name="PRODUCT_CATEGORIES",
-		joinColumns=@JoinColumn(name="CATEGORY_ID", referencedColumnName="CATEGORY_ID"),
-		inverseJoinColumns=@JoinColumn(name="PRODUCT_UPC", referencedColumnName="PRODUCT_UPC"))
+		joinColumns={@JoinColumn(name="CATEGORY_ID")},
+		inverseJoinColumns={@JoinColumn(name="PRODUCT_UPC")})
 	private List<Product> products; // Lazy-load
 	
 	public Category(int id, String description) {
