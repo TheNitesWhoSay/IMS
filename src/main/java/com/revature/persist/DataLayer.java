@@ -1,9 +1,11 @@
 package com.revature.persist;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.revature.beans.Classroom;
+import com.revature.ims_backend.entities.Category;
 import com.revature.session.SessionFactoryManager;
 
 public class DataLayer {
@@ -32,7 +34,9 @@ public class DataLayer {
 		}
 	}
 	
-	public Classroom getClassroomById(int id) {
-		return classroomDao.getById(id);
+	public Category getCategoryById(int id) {
+		Query query = session.createQuery("from Category where id = :id");
+		query.setInteger("id",  id);
+		return (Category)query.uniqueResult();
 	}
 }
