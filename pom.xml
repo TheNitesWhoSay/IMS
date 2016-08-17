@@ -19,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -42,5 +42,37 @@
       <artifactId>ojdbc6</artifactId>
       <version>11.2.0</version>
     </dependency>
+    
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+		  <artifactId>maven-surefire-plugin</artifactId>
+		  <version>2.18.1</version>
+		  <configuration>
+		    <excludedGroups>com.revature.ims_backend.test.IntegrationTest</excludedGroups>
+		  </configuration>
+		</plugin>
+		<plugin>
+		  <artifactId>maven-failsafe-plugin</artifactId>
+		  <version>2.18.1</version>
+		  <configuration>
+		    <includes>
+		      <include>**/*.java</include>
+		    </includes>
+		    <groups>com.revature.ims_backend.test.IntegrationTest</groups>
+		  </configuration>
+		  <executions>
+		    <execution>
+		      <goals>
+		        <goal>integration-test</goal>
+		        <goal>verify</goal>
+		      </goals>
+		    </execution>
+		  </executions> 
+		</plugin>
+  	</plugins>
+  </build>
+  
 </project>
