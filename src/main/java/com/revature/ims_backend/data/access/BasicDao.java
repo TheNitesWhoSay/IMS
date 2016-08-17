@@ -3,23 +3,24 @@ package com.revature.ims_backend.data.access;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 public class BasicDao {
 	
 	private Session session;
-	private String className;
+	private Class clazz;
 	
-	public BasicDao(Session session, String className) {
+	public BasicDao(Session session, Class clazz) throws ClassNotFoundException {
 		this.session = session;
-		this.className = className;
+		this.clazz = clazz;
 	}
 	
 	public Object get(int id) {
-		return session.get(className, id);
+		return session.createCriteria(clazz).add(Restrictions.idEq(id)).uniqueResult();
 	}
 	
 	public List<Object> getAll() {
-		return session.createCriteria(className).list();
+		return session.createCriteria(clazz).list();
 	}
 	
 	public void insert(Object obj) {

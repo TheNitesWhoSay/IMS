@@ -1,5 +1,7 @@
 package com.revature.ims_backend.test.entities;
 
+import static org.junit.Assert.*;
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -22,19 +24,20 @@ import com.revature.ims_backend.test.IntegrationTest;
 import junit.framework.TestCase;
 
 @Category(IntegrationTest.class)
-public class DataAccessTests extends TestCase {
+public class DataAccessTests {
 	
-	SessionFactory sf;
+	static SessionFactory sf;
 	Session session;
 	
 	@BeforeClass
-	protected void setUp() throws Exception {
+	public static void setUp() throws Exception {
 		sf = new Configuration().configure().buildSessionFactory();
 	}
 	
 	@Before
-	protected void openSession() throws Exception {
+	public void openSession() throws Exception {
 		session = sf.openSession();
+		System.out.println("Opening session!");
 	}
 	
 	@Test
@@ -42,13 +45,15 @@ public class DataAccessTests extends TestCase {
 		Transaction tx;
 		BasicDao addressDao = DaoFactory.getDao(session, "Address");
 		BasicDao stateDao = DaoFactory.getDao(session, "StateAbbreviation");
+		System.out.println(stateDao);
 		
 		// TEST CREATE
 		Address a1 = new Address();
 		a1.setAddress1("1 College and Main");
 		a1.setAddress2("CU Box 713");
 		a1.setCity("Columbus");
-		a1.setState((StateAbbreviation) stateDao.get(49));
+		a1.setState((StateAbbreviation) 
+				stateDao.get(49));
 		a1.setZip("43209");
 		tx = session.beginTransaction();
 		addressDao.insert(a1);
@@ -85,17 +90,17 @@ public class DataAccessTests extends TestCase {
 		tx.commit();
 		
 		Address a4 = (Address) addressDao.get(a3.getId());
-		assertNull(a3);
+		assertNull(a4);
 	}
 	
 	@After
-	protected void closeSession() throws Exception {
+	public void closeSession() throws Exception {
 		if (session.isOpen()) 
 			session.close();
 	}
 	
 	@AfterClass
-	protected void tearDown() throws Exception {
+	public static void tearDown() throws Exception {
 		sf.close();
 	}
 	
