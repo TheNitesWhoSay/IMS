@@ -42,6 +42,20 @@ public class ProductDaoTest {
 	///////////// Test Content //////////////
 	@Test
 	public void testStuff() {
+		
+		/*
+		 * Previously ran:
+		 * 
+			insert into IMS_STATE_ABBRV VALUES (1, 'Minnesota', 'MN');
+			insert into IMS_ADDRESS VALUES (1, 'street house', ' ', 'Plymouth', 1,
+			  '55447');
+			insert into IMS_CLIENT_TYPE VALUES (1, 'resturant');
+			insert into IMS_CLIENT VALUES (1, 'Restrurant', 'rest@gmail.com', 'John Doe',
+			  '763-323-2355', '355-232-2399', 1, 1);
+			commit;
+			
+		 */
+		
 		Query query = session.createQuery("FROM Client WHERE id=1");
 		Client client = (Client) query.uniqueResult();
 		
