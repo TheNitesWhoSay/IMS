@@ -1,13 +1,17 @@
 package com.revature.ims_backend.entities;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +26,7 @@ public class PurchaseOrder {
 	private double subTotal;
 	
 	@Column(name="PURCHASE_DATE")
-	private LocalDateTime purchaseDate;
+	private Date purchaseDate;
 	
 	@Column(name="TAX_AMOUNT")
 	private double taxAmount;
@@ -30,31 +34,35 @@ public class PurchaseOrder {
 	@Column(name="PO_TOTAL")
 	private double total;
 	
-	@Column(name="CLIENT_ID")
-	private int clientId; // TODO: Change me to an association
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="CLIENT_ID")
+	private Client client;
 
 	@OneToMany(fetch=FetchType.EAGER)
+	@JoinColumn(name="orderNumber")
 	private Set<OrderLine> orderLines;
 	
 	
-	public PurchaseOrder(int orderNumber, double subTotal, LocalDateTime purchaseDate, double taxAmount, double total,
-			int clientId) {
+	public PurchaseOrder(int orderNumber, double subTotal, Date purchaseDate, double taxAmount, double total,
+			Client client) {
 		super();
 		this.orderNumber = orderNumber;
 		this.subTotal = subTotal;
 		this.purchaseDate = purchaseDate;
 		this.taxAmount = taxAmount;
 		this.total = total;
-		this.clientId = clientId;
+		this.client = client;
+		this.orderLines = new HashSet<OrderLine>();
 	}
 
-	public PurchaseOrder(int orderNumber, double subTotal, LocalDateTime purchaseDate, double taxAmount, double total) {
+	public PurchaseOrder(int orderNumber, double subTotal, Date purchaseDate, double taxAmount, double total) {
 		super();
 		this.orderNumber = orderNumber;
 		this.subTotal = subTotal;
 		this.purchaseDate = purchaseDate;
 		this.taxAmount = taxAmount;
 		this.total = total;
+		this.orderLines = new HashSet<OrderLine>();
 	}
 
 	public int getOrderNumber() {
@@ -73,11 +81,11 @@ public class PurchaseOrder {
 		this.subTotal = subTotal;
 	}
 
-	public LocalDateTime getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(LocalDateTime purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 
@@ -97,12 +105,12 @@ public class PurchaseOrder {
 		this.total = total;
 	}
 
-	public int getClientId() {
-		return clientId;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public Set<OrderLine> getOrderLines() {
