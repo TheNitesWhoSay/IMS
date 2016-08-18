@@ -73,4 +73,19 @@ public class Address {
 	public Address() {
 		super();
 	}
+	public String toString() {
+		if (this.getAddress2() != null)
+			return String.format("%s, %s, %s, %s %s", 
+					this.getAddress1(),
+					this.getAddress2(),
+					this.getCity(),
+					this.getState(),
+					this.getZip());
+		else
+			return String.format("%s, %s, %s %s", 
+					this.getAddress1(),
+					this.getCity(),
+					this.getState(),
+					this.getZip());
+	}
 }

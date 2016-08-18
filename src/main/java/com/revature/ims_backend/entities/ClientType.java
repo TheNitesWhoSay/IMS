@@ -33,4 +33,9 @@ public class ClientType {
 	public ClientType() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return type;
+	}
+	
 }
