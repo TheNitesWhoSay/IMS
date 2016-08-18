@@ -10,7 +10,7 @@ public class BasicDao {
 	private Session session;
 	private Class clazz;
 	
-	public BasicDao(Session session, Class clazz) throws ClassNotFoundException {
+	public BasicDao(Session session, Class clazz) {
 		this.session = session;
 		this.clazz = clazz;
 	}
