@@ -1,6 +1,10 @@
 package com.revature.ims_backend.entities;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -61,15 +65,21 @@ public class ProductDaoTest {
 		
 		Category category = new Category(2, "Foodstuffs");
 		ProductImage image = new ProductImage(1, "http://i.imgur.com/8ezc6vO.jpg");
-		Product product = new Product(1, "Food", "Some food", "fd", 2.00, 10, 45, 3.45, 30.5, image);
+		List<Category> productCategories = new ArrayList<Category>();
+		productCategories.add(category);
+		Product product = new Product(1, "Food", "Some food", "fd", 2.00, 10, 45, 3.45, 30.5, image,
+				productCategories);
+		List<Product> foods = new ArrayList<Product>();
+		foods.add(product);
+		category.setProducts(foods);
 		PurchaseOrder order = new PurchaseOrder(1, 77.77, Calendar.getInstance().getTime(), .05, 88.88, client);
 		OrderLine line = new OrderLine(1, 1, 20.00, 5, product);
 		
 		Transaction tx = (Transaction) session.beginTransaction();
 		try {
-			session.save(category);
 			session.save(image);
 			session.save(product);
+			session.save(category);
 			session.save(order);
 			session.save(line);
 			tx.commit();
@@ -86,5 +96,6 @@ public class ProductDaoTest {
 				assert(false);
 			} catch ( Throwable th ) {}
 		}
+		
 	}
 }
