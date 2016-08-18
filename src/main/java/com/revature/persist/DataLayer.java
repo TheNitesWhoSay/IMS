@@ -4,18 +4,15 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-<<<<<<< HEAD
 import com.revature.ims_backend.data.access.BasicDao;
 import com.revature.ims_backend.data.access.DaoFactory;
-=======
->>>>>>> c71726a189fd2be658a25dc885ab367fd4a4082e
+
 import com.revature.ims_backend.entities.Category;
 import com.revature.session.SessionFactoryManager;
 
 public class DataLayer implements AutoCloseable {
 
 	private Session session;
-<<<<<<< HEAD
 	private Transaction tx;
 	
 	// TODO: Maybe find some way to optionally load
