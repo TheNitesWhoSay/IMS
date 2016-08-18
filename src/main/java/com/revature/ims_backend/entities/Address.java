@@ -3,6 +3,7 @@ package com.revature.ims_backend.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,6 +15,7 @@ public class Address {
 	
 	@Id
 	@Column(name="ims_address_id")
+	@GeneratedValue
 	private int id;
 	
 	@Column(name="street_address_1")
