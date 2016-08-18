@@ -4,18 +4,15 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Classroom;
 import com.revature.ims_backend.entities.Category;
 import com.revature.session.SessionFactoryManager;
 
 public class DataLayer {
 
 	private Session session;
-	private ClassroomDao classroomDao;
 	
 	public DataLayer() {
 		session = SessionFactoryManager.getSessionFactory().openSession();
-		classroomDao = new ClassroomDao(session);
 	}
 	
 	public void close() {
