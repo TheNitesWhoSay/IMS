@@ -99,4 +99,8 @@ public class DataLayer implements AutoCloseable {
 		query.setInteger("id",  id);
 		return (Category)query.uniqueResult();
 	}
+	
+	public List<Category> getCategories() {
+		return (List<Category>)(List) categoryDao.getAll();
+	}
 }
