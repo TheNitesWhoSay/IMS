@@ -1,5 +1,6 @@
 package com.revature.ims_backend.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -48,12 +49,12 @@ public class Product {
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
 	private ProductImage image;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="products")
-	private Set<Category> categories; // Lazy-load (probably)
+	@ManyToMany(mappedBy="products")
+	private List<Category> categories; // Lazy-load (probably)
 
 	
 	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
-			int reorderQuantity, double retailPrice, double weight, ProductImage image, Set<Category> categories) {
+			int reorderQuantity, double retailPrice, double weight, ProductImage image, List<Category> categories) {
 		super();
 		this.upc = upc;
 		this.name = name;
@@ -167,11 +168,11 @@ public class Product {
 		this.image = image;
 	}
 
-	public Set<Category> getCategories() {
+	public List<Category> getCategories() {
 		return categories;
 	}
 
-	public void setCategories(Set<Category> categories) {
+	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
 	

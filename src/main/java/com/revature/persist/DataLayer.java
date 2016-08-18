@@ -4,14 +4,18 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+<<<<<<< HEAD
 import com.revature.ims_backend.data.access.BasicDao;
 import com.revature.ims_backend.data.access.DaoFactory;
+=======
+>>>>>>> c71726a189fd2be658a25dc885ab367fd4a4082e
 import com.revature.ims_backend.entities.Category;
 import com.revature.session.SessionFactoryManager;
 
 public class DataLayer implements AutoCloseable {
 
 	private Session session;
+<<<<<<< HEAD
 	private Transaction tx;
 	
 	// TODO: Maybe find some way to optionally load
@@ -24,9 +28,7 @@ public class DataLayer implements AutoCloseable {
 	private BasicDao productImageDao;
 	private BasicDao purchaseOrderDao;
 	private BasicDao orderLineDao;
-	
-	private ClassroomDao classroomDao;
-	
+		
 	public DataLayer() {
 		session = SessionFactoryManager.getSessionFactory().openSession();
 		clientDao = DaoFactory.getDao(session, "Client");
@@ -38,8 +40,6 @@ public class DataLayer implements AutoCloseable {
 		productImageDao = DaoFactory.getDao(session, "ProductImage");
 		purchaseOrderDao = DaoFactory.getDao(session, "PurchaseOrder");
 		orderLineDao = DaoFactory.getDao(session, "OrderLine");
-		
-		classroomDao = new ClassroomDao(session);
 	}
 	
 	public void close() {
