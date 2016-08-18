@@ -1,12 +1,10 @@
 package com.revature.ims_backend.entities;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -35,7 +33,7 @@ public class Product {
 	
 	@Column(name="PACK_SIZE")
 	private int packSize;
-	
+
 	@Column(name="REORDER_QUANTITY")
 	private int reorderQuantity;
 	
@@ -82,10 +80,12 @@ public class Product {
 		this.retailPrice = retailPrice;
 		this.weight = weight;
 		this.image = image;
+		this.categories = new ArrayList<Category>();
 	}
 
 	public Product() {
 		super();
+		this.categories = new ArrayList<Category>();
 	}
 
 	public int getUpc() {
@@ -148,7 +148,7 @@ public class Product {
 		return retailPrice;
 	}
 
-	public void setRetailPrice(int retailPrice) {
+	public void setRetailPrice(double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 
@@ -174,6 +174,19 @@ public class Product {
 
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+	
+	public void addCategory(Category category) {
+		categories.add(category);
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Product [upc=" + upc + ", name=" + name + ", description=" + description + ", shortName=" + shortName
+				+ ", unitCost=" + unitCost + ", packSize=" + packSize + ", reorderQuantity=" + reorderQuantity
+				+ ", retailPrice=" + retailPrice + ", weight=" + weight + ", image=" + image + ", categories="
+				+ categories + "]";
 	}
 	
 }
