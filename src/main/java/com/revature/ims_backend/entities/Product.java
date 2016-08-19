@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -50,6 +51,10 @@ public class Product {
 	
 	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
 	private List<Category> categories; // Lazy-load (probably)
+	
+	@OneToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="PRODUCT_STOCK_ID")
+	private Stock stock;
 
 	
 	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
@@ -66,6 +71,7 @@ public class Product {
 		this.weight = weight;
 		this.image = image;
 		this.categories = categories;
+		this.stock = new Stock(-1, 0);
 	}
 
 	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
@@ -82,11 +88,13 @@ public class Product {
 		this.weight = weight;
 		this.image = image;
 		this.categories = new ArrayList<Category>();
+		this.stock = new Stock(-1, 0);
 	}
 
 	public Product() {
 		super();
 		this.categories = new ArrayList<Category>();
+		this.stock = new Stock(-1, 0);
 	}
 
 	public int getUpc() {
@@ -180,7 +188,14 @@ public class Product {
 	public void addCategory(Category category) {
 		categories.add(category);
 	}
-	
+
+	public Stock getStock() {
+		return stock;
+	}
+
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
 
 	@Override
 	public String toString() {

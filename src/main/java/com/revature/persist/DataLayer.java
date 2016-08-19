@@ -14,6 +14,7 @@ import com.revature.ims_backend.entities.Client;
 import com.revature.ims_backend.entities.ClientType;
 import com.revature.ims_backend.entities.Product;
 import com.revature.ims_backend.entities.StateAbbreviation;
+import com.revature.ims_backend.entities.Stock;
 import com.revature.logging.Log;
 import com.revature.session.SessionFactoryManager;
 
@@ -30,11 +31,13 @@ public class DataLayer implements AutoCloseable {
 	private BasicDao productDao;
 	private BasicDao categoryDao;
 	private BasicDao productImageDao;
+	private BasicDao stockDao;
 	private BasicDao purchaseOrderDao;
 	private BasicDao orderLineDao;
 		
 	public DataLayer() {
 		session = SessionFactoryManager.getSessionFactory().openSession();
+		Log.info(" |||||||||| Opened a new session! |||||||||| ");
 		clientDao = DaoFactory.getDao(session, "Client");
 		clientTypeDao = DaoFactory.getDao(session, "ClientType");
 		addressDao = DaoFactory.getDao(session, "Address");
@@ -42,13 +45,16 @@ public class DataLayer implements AutoCloseable {
 		productDao = DaoFactory.getDao(session, "Product");
 		categoryDao = DaoFactory.getDao(session, "Category");
 		productImageDao = DaoFactory.getDao(session, "ProductImage");
+		stockDao = DaoFactory.getDao(session, "Stock");
 		purchaseOrderDao = DaoFactory.getDao(session, "PurchaseOrder");
 		orderLineDao = DaoFactory.getDao(session, "OrderLine");
 	}
 	
 	public void close() {
-		if (session.isOpen())
+		if (session.isOpen()) {
 			session.close();
+			Log.info(" |||||||||| Closed a session! |||||||||| ");
+		}
 	}
 	
 	public void beginTransaction() {
@@ -134,5 +140,19 @@ public class DataLayer implements AutoCloseable {
 	
 	public void updateCategory(Category category) {
 		categoryDao.update(category);
+	}
+
+	public Product getProductByUpc(int upc) {
+		return (Product) productDao.get(upc);
+	}
+
+	public void updateProduct(Product product) {
+		productDao.update(product);
+	}
+
+	public void insertStock(Stock stock) {
+		if ( stockDao.get(stock.getId()) == null ) {
+			stockDao.insert(stock);
+		}
 	}
 }
