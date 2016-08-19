@@ -1,5 +1,6 @@
 package com.revature.ims_backend.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,13 +19,47 @@ public class Stock {
 	@Id
 	@Column(name="STOCK_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int id;
-	
-	@Column(name="PRODUCT_UPC")
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="PRODUCT_UPC")
-	int upc;
+	private int id;
 	
 	@Column(name="NUM_IN_STOCK")
-	int numInStock;
+	private int numInStock;
+	
+	@OneToOne(mappedBy="stock", cascade=CascadeType.ALL)
+	private Product product;
+
+	public Stock(int id, int numInStock) {
+		super();
+		this.id = id;
+		this.numInStock = numInStock;
+	}
+
+	public Stock() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getNumInStock() {
+		return numInStock;
+	}
+
+	public void setNumInStock(int numInStock) {
+		this.numInStock = numInStock;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	
+	
 }

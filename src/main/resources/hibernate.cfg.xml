@@ -24,6 +24,7 @@
     <mapping class="com.revature.ims_backend.entities.ProductImage" />
     <mapping class="com.revature.ims_backend.entities.PurchaseOrder" />
     <mapping class="com.revature.ims_backend.entities.StateAbbreviation" />
+    <mapping class="com.revature.ims_backend.entities.Stock" />
     
     
     <!-- Object-Relational Mapping Resource -->
