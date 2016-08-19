@@ -1,6 +1,9 @@
 package com.revature.ims_backend.data.access;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -21,6 +24,10 @@ public class BasicDao {
 	
 	public List<Object> getAll() {
 		return session.createCriteria(clazz).list();
+	}
+	
+	public Set<Object> getAllUnique() {
+		return new LinkedHashSet<Object>(getAll());
 	}
 	
 	public void insert(Object obj) {

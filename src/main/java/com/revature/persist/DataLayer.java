@@ -1,6 +1,7 @@
 package com.revature.persist;
 
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,7 +12,9 @@ import com.revature.ims_backend.data.access.DaoFactory;
 import com.revature.ims_backend.entities.Category;
 import com.revature.ims_backend.entities.Client;
 import com.revature.ims_backend.entities.ClientType;
+import com.revature.ims_backend.entities.Product;
 import com.revature.ims_backend.entities.StateAbbreviation;
+import com.revature.logging.Log;
 import com.revature.session.SessionFactoryManager;
 
 public class DataLayer implements AutoCloseable {
@@ -49,16 +52,20 @@ public class DataLayer implements AutoCloseable {
 	}
 	
 	public void beginTransaction() {
-		session.beginTransaction();
+		tx = session.beginTransaction();
 	}
 	
-	public void commitOrRollback() {
+	public boolean commitOrRollback() {
 		try {
-			if (tx.wasCommitted() || tx.wasRolledBack()) return;
-			else tx.commit();
+			if ( !(tx.wasCommitted() || tx.wasRolledBack()) ) {
+				tx.commit();
+				Log.info(" ||||||||||||||| Committed Transaction! ||||||||||||||| ");
+				return true;
+			}
 		} catch (Exception e) {
 			tx.rollback();
 		}
+		return false;
 	}
 	
 	public Client getClient(int id) {
@@ -100,7 +107,32 @@ public class DataLayer implements AutoCloseable {
 		return (Category)query.uniqueResult();
 	}
 	
-	public List<Category> getCategories() {
-		return (List<Category>)(List) categoryDao.getAll();
+	public Set<Category> getCategories() {
+		Log.info("Fetching Categories List...");
+		return (Set<Category>)(Set) categoryDao.getAllUnique();
+	}
+	
+	public Set<Product> getProducts() {
+		Log.info("Fetching products List...");
+		return (Set<Product>)(Set) productDao.getAllUnique();
+	}
+
+	public void insertProduct(Product product) {
+		if ( productDao.get(product.getUpc()) == null ) {
+			Log.info("Inserting: " + product);
+			productDao.insert(product);
+		} else {
+			Log.error("NOT INSERTING: " + product);
+		}
+	}
+	
+	public void insertCategory(Category category) {
+		if ( categoryDao.get(category.getId()) == null ) {
+			categoryDao.insert(category);
+		}
+	}
+	
+	public void updateCategory(Category category) {
+		categoryDao.update(category);
 	}
 }

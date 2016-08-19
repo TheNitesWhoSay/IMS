@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -47,7 +48,7 @@ public class Product {
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
 	private ProductImage image;
 	
-	@ManyToMany(mappedBy="products")
+	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
 	private List<Category> categories; // Lazy-load (probably)
 
 	
