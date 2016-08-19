@@ -26,7 +26,7 @@ public class Category {
 	@Column(name="CATEGORY_DESCRIPTION")
 	private String description;
 	
-	@ManyToMany//(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="PRODUCT_CATEGORIES",
 		joinColumns={@JoinColumn(name="CATEGORY_ID")},
 		inverseJoinColumns={@JoinColumn(name="PRODUCT_UPC")})
@@ -64,6 +64,10 @@ public class Category {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+	
+	public void addProduct(Product product) {
+		products.add(product);
 	}
 
 	@Override
