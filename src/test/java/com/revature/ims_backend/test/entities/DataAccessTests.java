@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -43,6 +44,7 @@ public class DataAccessTests {
 	}
 	
 	@Test
+	@Ignore
 	public void testAddress() throws Exception {
 		Transaction tx;
 		BasicDao addressDao = DaoFactory.getDao(session, "Address");
