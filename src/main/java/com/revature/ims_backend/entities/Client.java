@@ -9,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.junit.validator.ValidateWith;
 
 @Entity
 @Table(name="ims_client")
@@ -23,18 +26,24 @@ public class Client implements Serializable {
 	private int id;
 	
 	@Column(name="client_name")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="client_email")
+	@NotEmpty
+	@Email
 	private String email;
 	
 	@Column(name="point_of_contact_name")
+	@NotEmpty
 	private String pointOfContactName;
 	
 	@Column(name="client_phone")
+	@NotEmpty
 	private String phoneNumber;
 	
 	@Column(name="client_fax")
+	@NotEmpty
 	private String faxNumber;
 	
 	@OneToOne(fetch=FetchType.EAGER)

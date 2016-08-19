@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="ims_address")
 public class Address {
@@ -19,12 +21,14 @@ public class Address {
 	private int id;
 	
 	@Column(name="street_address_1")
+	@NotEmpty
 	private String address1;
 	
 	@Column(name="street_address_2")
 	private String address2;
 	
 	@Column(name="address_city")
+	@NotEmpty
 	private String city;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
@@ -74,7 +78,7 @@ public class Address {
 		super();
 	}
 	public String toString() {
-		if (this.getAddress2() != null)
+		if (this.getAddress2() != null && !this.getAddress2().equals(""))
 			return String.format("%s, %s, %s, %s %s", 
 					this.getAddress1(),
 					this.getAddress2(),
