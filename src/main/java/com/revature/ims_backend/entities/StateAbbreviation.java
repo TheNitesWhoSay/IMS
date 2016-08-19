@@ -42,5 +42,8 @@ public class StateAbbreviation {
 	}
 	public StateAbbreviation() {
 		super();
-	}	
+	}
+	public String toString() {
+		return abbreviation;
+	}
 }

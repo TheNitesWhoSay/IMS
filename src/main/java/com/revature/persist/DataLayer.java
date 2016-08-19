@@ -49,7 +49,7 @@ public class DataLayer implements AutoCloseable {
 	}
 	
 	public void beginTransaction() {
-		session.beginTransaction();
+		tx = session.beginTransaction();
 	}
 	
 	public void commitOrRollback() {
