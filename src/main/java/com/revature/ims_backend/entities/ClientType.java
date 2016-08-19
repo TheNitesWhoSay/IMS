@@ -6,16 +6,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="ims_client_type")
 public class ClientType {
-	
+		
 	@Id
 	@Column(name="client_type_id")
 	@GeneratedValue
 	private int id;
 	
 	@Column(name="client_type")
+	@NotEmpty
 	private String type;
 	
 	public int getId() {
@@ -37,5 +40,4 @@ public class ClientType {
 	public String toString() {
 		return type;
 	}
-	
 }

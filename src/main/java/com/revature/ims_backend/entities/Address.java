@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -33,9 +35,12 @@ public class Address {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="state_id")
+	@Valid
 	private StateAbbreviation state;
 	
 	@Column(name="address_zip")
+	@NotEmpty
+	@Size(min=5, max=5)
 	private String zip;
 	
 	public int getId() {
