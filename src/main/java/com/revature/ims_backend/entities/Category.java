@@ -61,7 +61,7 @@ public class Category {
 	public List<Product> getProducts() {
 		return products;
 	}
-
+	
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
@@ -72,7 +72,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", description=" + description + "]";
+		return description;
 	}
 	
 }
