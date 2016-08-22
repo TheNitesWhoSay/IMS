@@ -12,6 +12,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name="IMS_PRODUCT")
@@ -19,37 +25,49 @@ public class Product {
 	
 	@Id
 	@Column(name="PRODUCT_UPC")
+	@Range(min=0)
+	@Digits(integer=20, fraction=0)
 	private int upc;
 	
 	@Column(name="PRODUCT_NAME")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="PRODUCT_DESCRIPTION")
+	@NotEmpty
 	private String description;
 	
 	@Column(name="SHORT_NAME")
+	@NotEmpty
+	@Size(min=1, max=5)
 	private String shortName;
 	
 	@Column(name="UNIT_COST")
-	private double unitCost;
+	@Digits(fraction=2, integer=6)
+	private Double unitCost;
 	
 	@Column(name="PACK_SIZE")
-	private int packSize;
+	@NotNull
+	private Integer packSize;
 
 	@Column(name="REORDER_QUANTITY")
-	private int reorderQuantity;
+	@NotNull
+	private Integer reorderQuantity;
 	
 	@Column(name="RETAIL_PRICE")
-	private double retailPrice;
+	@NotNull
+	private Double retailPrice;
 	
 	@Column(name="PRODUCT_WEIGHT")
-	private double weight;
+	@NotNull
+	private Double weight;
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
 	private ProductImage image;
 	
 	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
+	@NotEmpty
 	private List<Category> categories; // Lazy-load (probably)
 	
 	@OneToOne(fetch=FetchType.EAGER)
