@@ -21,6 +21,14 @@ public class ClientType {
 	@NotEmpty
 	private String type;
 	
+	public boolean isRetailer() {
+		return type.equalsIgnoreCase("Retailer");
+	}
+	
+	public boolean isSupplier() {
+		return type.equalsIgnoreCase("Supplier");
+	}
+	
 	public int getId() {
 		return id;
 	}
