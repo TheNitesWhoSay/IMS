@@ -161,5 +161,9 @@ public class DataLayer implements AutoCloseable {
 		}
 	}
 
+	public Set<Stock> getInventoryLevels() {
+		return (Set<Stock>)(Set) stockDao.getAllUnique();
+	}
+
 	
 }
