@@ -13,6 +13,7 @@ import com.revature.ims_backend.entities.Category;
 import com.revature.ims_backend.entities.Client;
 import com.revature.ims_backend.entities.ClientType;
 import com.revature.ims_backend.entities.Product;
+import com.revature.ims_backend.entities.PurchaseOrder;
 import com.revature.ims_backend.entities.StateAbbreviation;
 import com.revature.ims_backend.entities.Stock;
 import com.revature.logging.Log;
@@ -123,6 +124,10 @@ public class DataLayer implements AutoCloseable {
 		return (Set<Product>)(Set) productDao.getAllUnique();
 	}
 
+	public Set<PurchaseOrder> getPurchaseOrders() {
+		return (Set<PurchaseOrder>)(Set) purchaseOrderDao.getAllUnique();
+	}
+	
 	public void insertProduct(Product product) {
 		if ( productDao.get(product.getUpc()) == null ) {
 			Log.info("Inserting: " + product);
@@ -155,4 +160,10 @@ public class DataLayer implements AutoCloseable {
 			stockDao.insert(stock);
 		}
 	}
+
+	public Set<Stock> getInventoryLevels() {
+		return (Set<Stock>)(Set) stockDao.getAllUnique();
+	}
+
+	
 }

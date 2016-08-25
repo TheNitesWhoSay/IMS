@@ -152,11 +152,11 @@ public class Product {
 		this.shortName = shortName;
 	}
 
-	public double getUnitCost() {
+	public Double getUnitCost() {
 		return unitCost;
 	}
 
-	public void setUnitCost(double unitCost) {
+	public void setUnitCost(Double unitCost) {
 		this.unitCost = unitCost;
 	}
 
@@ -164,31 +164,31 @@ public class Product {
 		return packSize;
 	}
 
-	public void setPackSize(int packSize) {
+	public void setPackSize(Integer packSize) {
 		this.packSize = packSize;
 	}
 
-	public int getReorderQuantity() {
+	public Integer getReorderQuantity() {
 		return reorderQuantity;
 	}
 
-	public void setReorderQuantity(int reorderQuantity) {
+	public void setReorderQuantity(Integer reorderQuantity) {
 		this.reorderQuantity = reorderQuantity;
 	}
 
-	public double getRetailPrice() {
+	public Double getRetailPrice() {
 		return retailPrice;
 	}
 
-	public void setRetailPrice(double retailPrice) {
+	public void setRetailPrice(Double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 
-	public double getWeight() {
+	public Double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(Double weight) {
 		this.weight = weight;
 	}
 
