@@ -11,7 +11,7 @@
     <property name="hibernate.connection.password">welcome1</property>
     <property name="hibernate.connection.pool_size">20</property>
     <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
+<!--     <property name="hibernate.hbm2ddl.auto">update</property> -->
     <property name="hibernate.show_sql">true</property> <!-- for debugging -->
     
     
@@ -24,12 +24,12 @@
     <mapping class="com.revature.ims_backend.entities.ProductImage" />
     <mapping class="com.revature.ims_backend.entities.PurchaseOrder" />
     <mapping class="com.revature.ims_backend.entities.StateAbbreviation" />
+    <mapping class="com.revature.ims_backend.entities.Stock" />
     
     
     <!-- Object-Relational Mapping Resource -->
 <!--     <mapping class="com.revature.beans.Student"></mapping> -->
 <!--     <mapping class="com.revature.beans.Course"></mapping> -->
-     <mapping class="com.revature.beans.Classroom"></mapping>
     
 <!--     <property name="hibernate.cache.region.factory_class"> -->
 <!--       net.sf.ehcache.hibernate.EhCacheRegionFactory -->

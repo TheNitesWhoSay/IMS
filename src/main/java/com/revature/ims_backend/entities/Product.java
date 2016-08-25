@@ -1,8 +1,8 @@
 package com.revature.ims_backend.entities;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name="IMS_PRODUCT")
@@ -18,42 +25,58 @@ public class Product {
 	
 	@Id
 	@Column(name="PRODUCT_UPC")
+	@Range(min=0)
+	@Digits(integer=20, fraction=0)
 	private int upc;
 	
 	@Column(name="PRODUCT_NAME")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="PRODUCT_DESCRIPTION")
+	@NotEmpty
 	private String description;
 	
 	@Column(name="SHORT_NAME")
+	@NotEmpty
+	@Size(min=1, max=5)
 	private String shortName;
 	
 	@Column(name="UNIT_COST")
-	private int unitCost;
+	@Digits(fraction=2, integer=6)
+	private Double unitCost;
 	
 	@Column(name="PACK_SIZE")
-	private String packSize;
-	
+	@NotNull
+	private Integer packSize;
+
 	@Column(name="REORDER_QUANTITY")
-	private int reorderQuantity;
+	@NotNull
+	private Integer reorderQuantity;
 	
 	@Column(name="RETAIL_PRICE")
-	private int retailPrice;
+	@NotNull
+	private Double retailPrice;
 	
 	@Column(name="PRODUCT_WEIGHT")
-	private int weight;
+	@NotNull
+	private Double weight;
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
 	private ProductImage image;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="categories")
-	private Set<Category> categories; // Lazy-load (probably)
+	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
+	@NotEmpty
+	private List<Category> categories; // Lazy-load (probably)
+	
+	@OneToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="PRODUCT_STOCK_ID")
+	private Stock stock;
 
 	
-	public Product(int upc, String name, String description, String shortName, int unitCost, String packSize,
-			int reorderQuantity, int retailPrice, int weight, ProductImage image, Set<Category> categories) {
+	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
+			int reorderQuantity, double retailPrice, double weight, ProductImage image, List<Category> categories) {
 		super();
 		this.upc = upc;
 		this.name = name;
@@ -66,10 +89,11 @@ public class Product {
 		this.weight = weight;
 		this.image = image;
 		this.categories = categories;
+		this.stock = new Stock(-1, 0);
 	}
 
-	public Product(int upc, String name, String description, String shortName, int unitCost, String packSize,
-			int reorderQuantity, int retailPrice, int weight, ProductImage image) {
+	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
+			int reorderQuantity, double retailPrice, double weight, ProductImage image) {
 		super();
 		this.upc = upc;
 		this.name = name;
@@ -81,10 +105,14 @@ public class Product {
 		this.retailPrice = retailPrice;
 		this.weight = weight;
 		this.image = image;
+		this.categories = new ArrayList<Category>();
+		this.stock = new Stock(-1, 0);
 	}
 
 	public Product() {
 		super();
+		this.categories = new ArrayList<Category>();
+		this.stock = new Stock(-1, 0);
 	}
 
 	public int getUpc() {
@@ -119,43 +147,43 @@ public class Product {
 		this.shortName = shortName;
 	}
 
-	public int getUnitCost() {
+	public Double getUnitCost() {
 		return unitCost;
 	}
 
-	public void setUnitCost(int unitCost) {
+	public void setUnitCost(Double unitCost) {
 		this.unitCost = unitCost;
 	}
 
-	public String getPackSize() {
+	public Integer getPackSize() {
 		return packSize;
 	}
 
-	public void setPackSize(String packSize) {
+	public void setPackSize(Integer packSize) {
 		this.packSize = packSize;
 	}
 
-	public int getReorderQuantity() {
+	public Integer getReorderQuantity() {
 		return reorderQuantity;
 	}
 
-	public void setReorderQuantity(int reorderQuantity) {
+	public void setReorderQuantity(Integer reorderQuantity) {
 		this.reorderQuantity = reorderQuantity;
 	}
 
-	public int getRetailPrice() {
+	public Double getRetailPrice() {
 		return retailPrice;
 	}
 
-	public void setRetailPrice(int retailPrice) {
+	public void setRetailPrice(Double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 
-	public int getWeight() {
+	public Double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(Double weight) {
 		this.weight = weight;
 	}
 
@@ -167,12 +195,32 @@ public class Product {
 		this.image = image;
 	}
 
-	public Set<Category> getCategories() {
+	public List<Category> getCategories() {
 		return categories;
 	}
 
-	public void setCategories(Set<Category> categories) {
+	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+	
+	public void addCategory(Category category) {
+		categories.add(category);
+	}
+
+	public Stock getStock() {
+		return stock;
+	}
+
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [upc=" + upc + ", name=" + name + ", description=" + description + ", shortName=" + shortName
+				+ ", unitCost=" + unitCost + ", packSize=" + packSize + ", reorderQuantity=" + reorderQuantity
+				+ ", retailPrice=" + retailPrice + ", weight=" + weight + ", image=" + image + ", categories="
+				+ categories + "]";
 	}
 	
 }

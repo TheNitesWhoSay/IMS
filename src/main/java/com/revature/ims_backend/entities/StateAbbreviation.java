@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="ims_state_abbrv")
 public class StateAbbreviation {
@@ -16,9 +18,11 @@ public class StateAbbreviation {
 	private int id;
 	
 	@Column(name="state_name")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="state_abbrv")
+	@NotEmpty
 	private String abbreviation;
 	
 	
@@ -42,5 +46,8 @@ public class StateAbbreviation {
 	}
 	public StateAbbreviation() {
 		super();
-	}	
+	}
+	public String toString() {
+		return abbreviation;
+	}
 }

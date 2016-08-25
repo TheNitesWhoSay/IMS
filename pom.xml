@@ -19,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -42,5 +42,55 @@
       <artifactId>ojdbc6</artifactId>
       <version>11.2.0</version>
     </dependency>
+	<dependency>
+    	<groupId>log4j</groupId>
+    	<artifactId>log4j</artifactId>
+    	<version>1.2.17</version>
+	</dependency>
+    <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>5.2.4.Final</version>
+</dependency>
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+		  <artifactId>maven-surefire-plugin</artifactId>
+		  <version>2.18.1</version>
+		  <configuration>
+		    <excludedGroups>com.revature.ims_backend.test.IntegrationTest</excludedGroups>
+		  </configuration>
+		</plugin>
+		<plugin>
+		  <artifactId>maven-failsafe-plugin</artifactId>
+		  <version>2.18.1</version>
+		  <configuration>
+		    <includes>
+		      <include>**/*.java</include>
+		    </includes>
+		    <groups>com.revature.ims_backend.test.IntegrationTest</groups>
+		  </configuration>
+		  <executions>
+		    <execution>
+		      <goals>
+		        <goal>integration-test</goal>
+		        <goal>verify</goal>
+		      </goals>
+		    </execution>
+		  </executions> 
+		</plugin>
+		<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-compiler-plugin</artifactId>
+	    <version>3.1</version>
+	    <configuration>
+	     <source>1.8</source>
+	     <target>1.8</target>
+	    </configuration>
+	   </plugin>
+  	</plugins>
+  </build>
+  
 </project>

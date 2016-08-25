@@ -1,5 +1,6 @@
 package com.revature.ims_backend.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -25,11 +26,11 @@ public class Category {
 	@Column(name="CATEGORY_DESCRIPTION")
 	private String description;
 	
-	@ManyToMany(fetch=FetchType.LAZY)
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="PRODUCT_CATEGORIES",
-		joinColumns=@JoinColumn(name="PRODUCT_UPC"),
-		inverseJoinColumns=@JoinColumn(name="CATEGORY_ID"))
-	private Set<Product> products; // Lazy-load
+		joinColumns={@JoinColumn(name="CATEGORY_ID")},
+		inverseJoinColumns={@JoinColumn(name="PRODUCT_UPC")})
+	private List<Product> products; // Lazy-load
 	
 	public Category(int id, String description) {
 		super();
@@ -57,12 +58,21 @@ public class Category {
 		this.description = description;
 	}
 
-	public Set<Product> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
-
-	public void setProducts(Set<Product> products) {
+	
+	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+	
+	public void addProduct(Product product) {
+		products.add(product);
+	}
+
+	@Override
+	public String toString() {
+		return description;
 	}
 	
 }
