@@ -34,7 +34,7 @@ public class DataLayer implements AutoCloseable {
 	private BasicDao stockDao;
 	private BasicDao purchaseOrderDao;
 	private BasicDao orderLineDao;
-		
+	
 	public DataLayer() {
 		session = SessionFactoryManager.getSessionFactory().openSession();
 		Log.info(" |||||||||| Opened a new session! |||||||||| ");

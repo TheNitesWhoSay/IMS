@@ -19,6 +19,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="IMS_PRODUCT")
 public class Product {
@@ -64,14 +66,17 @@ public class Product {
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
+	@JsonManagedReference
 	private ProductImage image;
 	
 	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
 	@NotEmpty
+	@JsonManagedReference
 	private List<Category> categories; // Lazy-load (probably)
 	
 	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="PRODUCT_STOCK_ID")
+	@JsonManagedReference
 	private Stock stock;
 
 	
@@ -155,7 +160,7 @@ public class Product {
 		this.unitCost = unitCost;
 	}
 
-	public int getPackSize() {
+	public Integer getPackSize() {
 		return packSize;
 	}
 
