@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="ims_client_type")
 public class ClientType {
@@ -21,10 +23,12 @@ public class ClientType {
 	@NotEmpty
 	private String type;
 	
+	@JsonIgnore
 	public boolean isRetailer() {
 		return type.equalsIgnoreCase("Retailer");
 	}
 	
+	@JsonIgnore
 	public boolean isSupplier() {
 		return type.equalsIgnoreCase("Supplier");
 	}

@@ -24,7 +24,7 @@ public class Stock {
 	private int numInStock;
 	
 	@OneToOne(mappedBy="stock", cascade=CascadeType.ALL)
-	@JsonBackReference
+	@JsonBackReference("stock")
 	private Product product;
 
 	public Stock(int id, int numInStock) {

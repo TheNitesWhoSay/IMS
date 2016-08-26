@@ -13,6 +13,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name="ims_address")
 public class Address {
@@ -97,4 +100,5 @@ public class Address {
 					this.getState(),
 					this.getZip());
 	}
+	
 }

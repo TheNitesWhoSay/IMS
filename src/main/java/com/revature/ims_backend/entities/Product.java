@@ -19,7 +19,9 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="IMS_PRODUCT")
@@ -66,20 +68,17 @@ public class Product {
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_IMAGE_ID")
-	@JsonManagedReference
 	private ProductImage image;
 	
 	@ManyToMany(mappedBy="products", fetch=FetchType.EAGER)
 	@NotEmpty
-	@JsonManagedReference
 	private List<Category> categories; // Lazy-load (probably)
 	
 	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="PRODUCT_STOCK_ID")
-	@JsonManagedReference
+	@JsonManagedReference("stock")
 	private Stock stock;
 
-	
 	public Product(int upc, String name, String description, String shortName, double unitCost, int packSize,
 			int reorderQuantity, double retailPrice, double weight, ProductImage image, List<Category> categories) {
 		super();
