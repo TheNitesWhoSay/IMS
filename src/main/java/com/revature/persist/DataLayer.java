@@ -13,6 +13,7 @@ import com.revature.ims_backend.data.access.DaoFactory;
 import com.revature.ims_backend.entities.Category;
 import com.revature.ims_backend.entities.Client;
 import com.revature.ims_backend.entities.ClientType;
+import com.revature.ims_backend.entities.OrderLine;
 import com.revature.ims_backend.entities.Product;
 import com.revature.ims_backend.entities.ProductImage;
 import com.revature.ims_backend.entities.PurchaseOrder;
@@ -37,7 +38,7 @@ public class DataLayer implements AutoCloseable {
 	private BasicDao stockDao;
 	private BasicDao purchaseOrderDao;
 	private BasicDao orderLineDao;
-		
+	
 	public DataLayer() {
 		session = SessionFactoryManager.getSessionFactory().openSession();
 		Log.info(" |||||||||| Opened a new session! |||||||||| ");
@@ -167,12 +168,23 @@ public class DataLayer implements AutoCloseable {
 	public Set<Stock> getInventoryLevels() {
 		return (Set<Stock>)(Set) stockDao.getAllUnique();
 	}
-
+	
 	public void insertProductImage(ProductImage productImage) {
 		if ( productImageDao.get(productImage.getId()) == null ) {
 			productImageDao.insert(productImage);
 		}
 	}
-
 	
+	public PurchaseOrder getInvoice(int id) {
+		return (PurchaseOrder) purchaseOrderDao.get(id);
+	}
+
+	public void insertPurchaseOrder(PurchaseOrder po) {
+		purchaseOrderDao.insert(po);
+		for (OrderLine line: po.getOrderLines()) {
+			System.out.println(po.getOrderNumber());
+			line.setOrderNumber(po.getOrderNumber());
+			orderLineDao.insert(line);
+		}
+	}
 }

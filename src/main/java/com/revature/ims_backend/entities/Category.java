@@ -1,7 +1,6 @@
 package com.revature.ims_backend.entities;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="IMS_PRODUCT_CATEGORY")
@@ -30,6 +33,7 @@ public class Category {
 	@JoinTable(name="PRODUCT_CATEGORIES",
 		joinColumns={@JoinColumn(name="CATEGORY_ID")},
 		inverseJoinColumns={@JoinColumn(name="PRODUCT_UPC")})
+	@JsonIgnore
 	private List<Product> products; // Lazy-load
 	
 	public Category(int id, String description) {

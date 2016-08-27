@@ -1,6 +1,5 @@
 package com.revature.ims_backend.entities;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,10 +7,13 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,8 @@ public class PurchaseOrder {
 
 	@Id
 	@Column(name="ORDER_NUMBER")
+	@GeneratedValue(generator="orderNumberSequence", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(sequenceName="ORDER_NUMBER_SEQ", name = "orderNumberSequence")
 	private int orderNumber;
 	
 	@Column(name="SUBTOTAL")
@@ -34,14 +38,12 @@ public class PurchaseOrder {
 	@Column(name="PO_TOTAL")
 	private double total;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="CLIENT_ID")
 	private Client client;
 
-	@OneToMany(fetch=FetchType.EAGER)
-	@JoinColumn(name="orderNumber")
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="comp_id.orderNumber")
 	private Set<OrderLine> orderLines;
-	
 	
 	public PurchaseOrder(int orderNumber, double subTotal, Date purchaseDate, double taxAmount, double total,
 			Client client) {
