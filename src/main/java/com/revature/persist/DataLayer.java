@@ -7,12 +7,14 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.revature.email.Notifications;
 import com.revature.ims_backend.data.access.BasicDao;
 import com.revature.ims_backend.data.access.DaoFactory;
 import com.revature.ims_backend.entities.Category;
 import com.revature.ims_backend.entities.Client;
 import com.revature.ims_backend.entities.ClientType;
 import com.revature.ims_backend.entities.Product;
+import com.revature.ims_backend.entities.ProductImage;
 import com.revature.ims_backend.entities.PurchaseOrder;
 import com.revature.ims_backend.entities.StateAbbreviation;
 import com.revature.ims_backend.entities.Stock;
@@ -67,6 +69,7 @@ public class DataLayer implements AutoCloseable {
 			if ( !(tx.wasCommitted() || tx.wasRolledBack()) ) {
 				tx.commit();
 				Log.info(" ||||||||||||||| Committed Transaction! ||||||||||||||| ");
+				new Notifications(this).runCheck();
 				return true;
 			}
 		} catch (Exception e) {
@@ -163,6 +166,12 @@ public class DataLayer implements AutoCloseable {
 
 	public Set<Stock> getInventoryLevels() {
 		return (Set<Stock>)(Set) stockDao.getAllUnique();
+	}
+
+	public void insertProductImage(ProductImage productImage) {
+		if ( productImageDao.get(productImage.getId()) == null ) {
+			productImageDao.insert(productImage);
+		}
 	}
 
 	
